@@ -1,3 +1,5 @@
+# See the OWNERS docs at https://go.k8s.io/owners
+
 reviewers:
 - thockin
 - lavalamp
@@ -11,7 +13,6 @@ reviewers:
 - vishh
 - mikedanese
 - nikhiljindal
-- bprashanth
 - erictune
 - pmorie
 - dchen1107
@@ -19,8 +20,7 @@ reviewers:
 - zmerlynn
 - justinsb
 - pwittrock
-- roberthbailey
-- timstclair
+- tallclair
 - yifan-gu
 - eparis
 - soltysh
@@ -28,13 +28,8 @@ reviewers:
 - madhusudancs
 - hongchaodeng
 - rootfs
-- jszczepkowski
-- markturansky
-- fgrzadkowski
 - aveshagarwal
 - david-mcmahon
 - pweil-
 - rata
-- feihujiang
 - sdminonne
-- ghodss

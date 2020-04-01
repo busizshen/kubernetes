@@ -20,10 +20,10 @@ import (
 	"net/url"
 	"testing"
 
+	"k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/intstr"
 	v1listers "k8s.io/client-go/listers/core/v1"
-	"k8s.io/client-go/pkg/api/v1"
 	"k8s.io/client-go/tools/cache"
 )
 
@@ -234,10 +234,10 @@ func TestResolve(t *testing.T) {
 			}
 		}
 
-		clusterURL, err := ResolveCluster(serviceLister, "one", "alfa")
+		clusterURL, err := ResolveCluster(serviceLister, "one", "alfa", 443)
 		check("cluster", test.clusterMode, clusterURL, err)
 
-		endpointURL, err := ResolveEndpoint(serviceLister, endpointLister, "one", "alfa")
+		endpointURL, err := ResolveEndpoint(serviceLister, endpointLister, "one", "alfa", 443)
 		check("endpoint", test.endpointMode, endpointURL, err)
 	}
 }

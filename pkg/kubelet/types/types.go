@@ -20,12 +20,15 @@ import (
 	"net/http"
 	"time"
 
-	"k8s.io/kubernetes/pkg/api/v1"
+	"k8s.io/api/core/v1"
+	"k8s.io/apimachinery/pkg/types"
 )
 
 // TODO: Reconcile custom types in kubelet/types and this subpackage
 
-type HttpGetter interface {
+// HTTPGetter is an interface representing the ability to perform HTTP GET requests.
+type HTTPGetter interface {
+	// Get issues a GET to the specified URL.
 	Get(url string) (*http.Response, error)
 }
 
@@ -91,3 +94,9 @@ type Reservation struct {
 	// Kubernetes represents resources reserved for kubernetes system components.
 	Kubernetes v1.ResourceList
 }
+
+// A pod UID which has been translated/resolved to the representation known to kubelets.
+type ResolvedPodUID types.UID
+
+// A pod UID for a mirror pod.
+type MirrorPodUID types.UID
